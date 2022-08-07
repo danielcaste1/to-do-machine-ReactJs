@@ -1,0 +1,14 @@
+.to-do-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+}
+.to-do-list__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 1rem auto;
+    color: #52796F;
+}

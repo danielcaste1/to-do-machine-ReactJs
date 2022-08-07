@@ -1,0 +1,19 @@
+.search-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 1rem auto;
+    font-family: 'Lora', serif;
+}
+.search-section input[type="text"] {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem;
+    border-radius: 1.6rem;
+    color: #84A98C;
+    border: 1px solid #CAD2C5;
+    padding: 1.2rem 1.6rem;
+    outline: none;
+}
+.search-section input::placeholder{
+    color: #CAD2C5;
+}

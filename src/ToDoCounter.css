@@ -1,0 +1,12 @@
+.to-do__counter {
+    display: flex;
+    flex-direction: column;
+    color: #84A98C;
+    font-family: 'Lora', serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-style: italic;
+    margin: 1rem auto;
+    padding: 1rem;
+}
