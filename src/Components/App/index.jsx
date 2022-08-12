@@ -4,21 +4,18 @@ import { useLocalStorage } from "../../Hooks/useLocalStorage"
 
 
 
-
-
-
-
-
-
 function App() {
   const appTitle = "To Do Machine"
- 
-  const [toDos, setToDos] = useLocalStorage("toDoList", []);
+  const [searchValue, setSearchValue] = React.useState('');
+  const {
+    item: toDos, 
+    saveItem : setToDos,
+    loading,
+    error
+  } = useLocalStorage("toDoList", []);
  
   
   const completedToDos = toDos.filter(todo => todo.completed);
-  
-  const [searchValue, setSearchValue] = React.useState('');
 
   let filteredToDos = [];
   if(!(searchValue.length >= 1)){
@@ -52,16 +49,27 @@ function App() {
     
   }
 
+  /**
+   * //uselayoutEffect() -> Este hook ejecuta el código que le enviemos, justo después de renderizar el componente.
+    //useEffect() -> Este hook ejecuta el código que le enviemos, justo antes de renderizar el componente.
+    React.useEffect(()=>{
+      console.log('Se está ejecutando un useEffect()')
+    },[toDos])//este ultimo parametro indica que parametros vamos a "Escuchar", el "Escuchador" se va activar cada vez que se actualice el estado de este parametro.
+   */
+
+
   return(
     <AppUI
-      appTitle={appTitle}
-      completedToDos = {completedToDos}
-      ToDos={toDos}
-      searchValue= {searchValue}
-      setSearchValue= {setSearchValue}
+      appTitle={ appTitle }
+      completedToDos = { completedToDos }
+      ToDos={ toDos }
+      loading={ loading }
+      error={ error }
+      searchValue= { searchValue }
+      setSearchValue= { setSearchValue }
       filteredToDos={ filteredToDos }
-      toggleTodo = {toggleTodo}
-      deleteTodo = {deleteTodo}
+      toggleTodo = { toggleTodo }
+      deleteTodo = { deleteTodo }
     />
   )
 }

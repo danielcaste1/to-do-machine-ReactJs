@@ -10,6 +10,8 @@ function AppUI({
     appTitle,
     completedToDos ,
     ToDos,
+    loading,
+    error,
     searchValue,
     setSearchValue,
     filteredToDos,
@@ -34,7 +36,11 @@ function AppUI({
         />
         
         <ToDoList>
-            {filteredToDos.map(item => {
+            {loading && <p className="loading"><i className="fa-solid fa-circle-notch"></i></p>}
+            {(!loading && !filteredToDos.length) &&  <p>Create your first To Do with the button above.</p>}
+            {(!loading && error) &&  <p>Ocurrió un error, estamos trabajando en ello...</p>}
+            
+            { filteredToDos.map(item => {
             return <ToDoItem 
                     key={ filteredToDos.indexOf(item) } 
                     text={ item.text }
@@ -52,3 +58,4 @@ function AppUI({
 }
 
 export { AppUI }
+

@@ -4,6 +4,7 @@
     align-items: stretch;
     width: 100%;
     margin: 0 auto;
+    justify-content: center;
 }
 .to-do-list__title {
     font-family: 'Poppins', sans-serif;
@@ -11,4 +12,26 @@
     text-align: center;
     margin: 1rem auto;
     color: #52796F;
+}
+
+.to-do-list .loading i {
+
+    font-size: 5rem;
+    animation: spin 1000ms infinite;
+    color: #d8d8d8;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.to-do-list p {
+    justify-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin: 10rem auto;
+    color: #c4c4c4;
+
+    font-weight: 300;
 }
