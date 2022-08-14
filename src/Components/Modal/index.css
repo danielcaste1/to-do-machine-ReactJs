@@ -1,0 +1,84 @@
+.modal__background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f3e467f;
+
+}
+
+.modal__card {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    background-color: #ffffff;
+    padding: 2rem 4rem;
+    border-radius: 1.6rem;
+    box-shadow: 0px 5px 12px #CAD2C5;
+    animation: appear 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+@keyframes appear {
+    from {transform: scale(0);}
+}
+
+
+.modal__card .card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 1rem auto;
+    color: #354F52;
+    
+}
+
+.modal__card .card__input[type="text"] {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem;
+    border-radius: 1.6rem;
+    color: #84A98C;
+    border: 1px solid #CAD2C5;
+    padding: 1.2rem 1.6rem;
+    margin: 1rem;
+    outline: none;
+    box-shadow: 0px 0px 20px #d9d9d9;
+}
+
+.modal__card .card__footer {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+}
+
+.modal__card .card__footer button {
+    transition: 200ms;
+    font-family: 'Poppins', serif;
+    font-size: 1.6rem;
+    border-radius: 1.6rem;
+    border: 1px solid #CAD2C5;
+    padding: 1.2rem 2.6rem;
+    margin: 1rem;
+    outline: none;
+    
+    cursor: pointer;
+}
+
+.modal__card .card__footer .btn-primary{
+    background-color: #354F52;
+    color: #CAD2C5;
+}
+
+.modal__card .card__footer .btn-secondary {
+    color: #354F52;
+    background-color: #CAD2C5;
+}
+
+.modal__card .card__footer button:hover {
+    color: #FFF;
+}

@@ -16,6 +16,12 @@
     box-shadow: 0px 0px 12px #CAD2C5;
     transition: 500ms;
 }
+
+.opened{
+    background-color: #CAD2C5;
+    color: #2F3E46;
+    transform: rotate(45deg);
+}
 .add-task__button:hover{
     box-shadow: 0px 0px 20px #2F3E46;
 }

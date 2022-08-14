@@ -1,15 +1,16 @@
-import React from "react";
-import './ToDoCounter.css'
+import React, { useContext } from "react";
+import "./ToDoCounter.css";
+import { AppContext } from "../../Context";
 
-
-function ToDoCounter ({completed, total }){
+function ToDoCounter() {
     
-    return(
-        <div className="to-do__counter">
-            <span> Total Tareas: {total} </span>
-            <span> Finalizadas: {completed} </span>
-        </div>
-    )
+  const { completedToDos, ToDos } = useContext(AppContext);
+
+  return (
+    <div className="to-do__counter">
+      <span>You've done {completedToDos.length} tasks of {ToDos.length}</span>
+    </div>
+  );
 }
 
 export { ToDoCounter };

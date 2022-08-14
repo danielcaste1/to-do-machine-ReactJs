@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./ToDoTitle.css"
+import { AppContext } from "../../Context";
 
-function ToDoTitle (props){
+function ToDoTitle (){
+
+    const {appTitle} = useContext(AppContext);
+
     return(
-        <h1 className="app-title">{ props.title }</h1>
+        <h1 className="app-title">
+            { appTitle }
+        </h1>
     )
 }
 

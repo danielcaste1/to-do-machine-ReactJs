@@ -26,7 +26,7 @@
     100% {transform: rotate(360deg);}
 }
 
-.to-do-list p {
+.to-do-list > p {
     justify-self: center;
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
