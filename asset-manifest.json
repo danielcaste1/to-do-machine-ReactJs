@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/app1/static/css/main.21e66896.css",
-    "main.js": "/app1/static/js/main.d6d4a34c.js",
-    "index.html": "/app1/index.html",
-    "main.21e66896.css.map": "/app1/static/css/main.21e66896.css.map",
-    "main.d6d4a34c.js.map": "/app1/static/js/main.d6d4a34c.js.map"
+    "main.css": "/to-do-machine-ReactJs/static/css/main.21e66896.css",
+    "main.js": "/to-do-machine-ReactJs/static/js/main.d6d4a34c.js",
+    "index.html": "/to-do-machine-ReactJs/index.html",
+    "main.21e66896.css.map": "/to-do-machine-ReactJs/static/css/main.21e66896.css.map",
+    "main.d6d4a34c.js.map": "/to-do-machine-ReactJs/static/js/main.d6d4a34c.js.map"
   },
   "entrypoints": [
     "static/css/main.21e66896.css",
