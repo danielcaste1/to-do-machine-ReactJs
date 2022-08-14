@@ -5,7 +5,7 @@ function ModalCard({children}){
         <div className="modal__background">
             <div className="modal__card">
                 {children}
-        |   </div>
+           </div>
         </div>
     )
 }
