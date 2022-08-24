@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./ToDoSearch.css";
-import { AppContext } from "../../Context";
 
-function ToDoSearch() {
-  const { searchValue, searchChanged } = useContext(AppContext);
+function ToDoSearch({ loading, searchValue, searchChanged }) {
   return (
     <div className="search-section">
       <input
@@ -11,6 +9,7 @@ function ToDoSearch() {
         placeholder="Search..."
         value={searchValue}
         onChange={searchChanged}
+        disabled = {loading}
       />
     </div>
   );

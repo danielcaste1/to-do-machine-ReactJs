@@ -1,10 +1,7 @@
-import React, { useState, useEffect, createContext } from "react";
-import { useLocalStorage } from "../Hooks/useLocalStorage";
+import React, { useState, useEffect } from "react";
+import { useLocalStorage } from "../../Hooks/useLocalStorage";
 
-const AppContext = createContext();
-
-function AppProvider(props) {
-
+function useToDos() {
   const appTitle = "To-Do List";
 
   const [searchValue, setSearchValue] = React.useState("");
@@ -52,10 +49,10 @@ function AppProvider(props) {
   };
 
   const addNewTodo = () => {
-    const newToDos = [{text: newTodo, completed: false}, ...ToDos ]
+    const newToDos = [{ text: newTodo, completed: false }, ...ToDos];
     setToDos(newToDos);
     setNewTodo("");
-    toggleModal()
+    toggleModal();
   };
 
   const updateDocTitle = () => {
@@ -77,35 +74,28 @@ function AppProvider(props) {
 
   const [openModal, setOpenModal] = useState(false);
 
-  const toggleModal = ()=>{
-    setOpenModal(!openModal)
-  }
+  const toggleModal = () => {
+    setOpenModal(!openModal);
+  };
 
-  return (
-    <AppContext.Provider
-      value={{
-        appTitle,
-        completedToDos,
-        ToDos,
-        loading,
-        error,
-        searchValue,
-        setSearchValue,
-        searchChanged,
-        filteredToDos,
-        toggleTodo,
-        newTodo,
-        setNewTodo,
-        addNewTodo,
-        deleteTodo,
-        openModal, 
-        toggleModal
-      }}
-    >
-      {props.children}
-    </AppContext.Provider>
-  );
+  return {
+    appTitle,
+    completedToDos,
+    ToDos,
+    loading,
+    error,
+    searchValue,
+    setSearchValue,
+    searchChanged,
+    filteredToDos,
+    toggleTodo,
+    newTodo,
+    setNewTodo,
+    addNewTodo,
+    deleteTodo,
+    openModal,
+    toggleModal,
+  };
 }
 
-export { AppProvider, AppContext };
-
+export { useToDos };

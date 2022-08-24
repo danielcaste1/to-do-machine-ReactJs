@@ -6,6 +6,7 @@
     font-family: 'Lora', serif;
 }
 .search-section input[type="text"] {
+    transition: 300ms;
     font-family: 'Lora', serif;
     font-size: 1.6rem;
     border-radius: 1.6rem;
@@ -14,6 +15,11 @@
     padding: 1.2rem 1.6rem;
     outline: none;
 }
+
+.search-section input[type="text"]:disabled {
+    opacity: .2;
+}
+
 .search-section input::placeholder{
     color: #CAD2C5;
 }

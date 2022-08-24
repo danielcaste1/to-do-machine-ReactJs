@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./ToDoCounter.css";
-import { AppContext } from "../../Context";
 
-function ToDoCounter() {
+function ToDoCounter({ loading, ToDos, completedToDos }) {
     
-  const { completedToDos, ToDos } = useContext(AppContext);
-
   return (
     <div className="to-do__counter">
-      <span>You've done {completedToDos.length} tasks of {ToDos.length}</span>
+      {loading && (<span>Loading...</span>)}
+      {!loading && (<span>You've done {completedToDos.length} tasks of {ToDos.length}</span>)}
     </div>
   );
 }

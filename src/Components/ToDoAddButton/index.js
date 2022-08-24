@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./ToDoAddButton.css";
-import { AppContext } from "../../Context";
 
-function ToDoAddButton (){
-    const {openModal, toggleModal} = useContext(AppContext);
+function ToDoAddButton ({openModal, toggleModal}){
     return(
         <div className={`add-task`} >
             <button 
