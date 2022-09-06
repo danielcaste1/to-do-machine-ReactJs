@@ -13,12 +13,16 @@ import { ModalCard } from "../ModalCard";
 import { ToDoError } from "../ToDoError";
 import { EmptyToDos } from "../EmptyToDos";
 import { EmptySearchResults } from "../EmptySearchResults";
+import { AddContactCard } from "../AddContactCard";
+import { ChangeAlertWithStorageListener } from "../ChangeAlert";
+import { ChangeAlertCardWithStorageListener } from "../ChangeAlertCard";
 
 function App() {
   const {
     appTitle,
     completedToDos,
     ToDos,
+    sincronizeToDos,
     loading,
     searchValue,
     searchChanged,
@@ -31,13 +35,14 @@ function App() {
     addNewTodo,
     openModal,
     toggleModal,
+    showingModal,
+    setShowingModal,
   } = useToDos();
   return (
     <React.Fragment>
       <ToDoTitle appTitle={appTitle}></ToDoTitle>
 
       <ToDoHeader loading={loading}>
-        
         <ToDoCounter
           completedToDos={completedToDos}
           ToDos={ToDos}
@@ -47,13 +52,13 @@ function App() {
           searchValue={searchValue}
           searchChanged={searchChanged}
         ></ToDoSearch>
-
       </ToDoHeader>
 
       <ToDoList
         error={error}
         onError={() => <ToDoError />}
         loading={loading}
+        sincronize={sincronizeToDos}
         onLoad={() => <ToDoLoad />}
         filteredToDos={filteredToDos}
         onEmptyToDos={() => <EmptyToDos />}
@@ -62,18 +67,18 @@ function App() {
           <EmptySearchResults searchValue={searchValue} />
         )}
         /**
-        La función render puede ser pasada cómo una propiedad en especifica o como prop.children
-          render={(item) => (
-            <ToDoItem
-              key={filteredToDos.indexOf(item)}
-              text={item.text}
-              completed={item.completed}
-              data_key={filteredToDos.indexOf(item)}
-              toggleTodo={toggleTodo}
-              deleteTodo={deleteTodo}
-            />
-          )} 
-          */
+      La función render puede ser pasada cómo una propiedad en especifica o como prop.children
+        render={(item) => (
+          <ToDoItem
+            key={filteredToDos.indexOf(item)}
+            text={item.text}
+            completed={item.completed}
+            data_key={filteredToDos.indexOf(item)}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+          />
+        )} 
+        */
       >
         {(item) => (
           <ToDoItem
@@ -90,43 +95,35 @@ function App() {
       <ToDoAddButton
         openModal={openModal}
         toggleModal={toggleModal}
+        setShowingModal={setShowingModal}
       ></ToDoAddButton>
 
-      {!!openModal && (
-        <Modal>
-          <ModalCard>
-            <p className="card__title">Set a new task!</p>
-            <input
-              value={newTodo}
-              type="text"
-              className="card__input"
-              onChange={(event) => {
-                setNewTodo(event.target.value);
-              }}
-            ></input>
+      <Modal openModal={openModal}>
+        <ModalCard>
+          {showingModal === "addToDo" && 
+            <AddContactCard 
+            newTodo={newTodo}
+            setNewTodo={setNewTodo}
+            addNewTodo={addNewTodo}
+            toggleModal={toggleModal}
+            />
+          }  
+          {showingModal === "changeAlert" && 
+            <ChangeAlertCardWithStorageListener 
+              toggleModal={toggleModal}
+              sincronizeToDos={sincronizeToDos}
+              setShowingModal={setShowingModal}
+            />
+          }  
+        </ModalCard>
+      </Modal>
 
-            <div className="card__footer">
-
-              <button
-                className="btn btn-secondary"
-                type="button"
-                onClick={toggleModal}
-              >Cancel</button>
-
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={() => {
-                  addNewTodo(newTodo);
-                }}
-              >Add</button>
-
-            </div>
-          </ModalCard>
-        </Modal>
-      )}
+      <ChangeAlertWithStorageListener
+        toggleModal={toggleModal}
+        sincronizeToDos={sincronizeToDos}
+        setShowingModal={setShowingModal}
+      />
     </React.Fragment>
   );
 }
-
 export default App;

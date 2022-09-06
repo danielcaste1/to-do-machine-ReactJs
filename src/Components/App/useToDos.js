@@ -5,17 +5,23 @@ function useToDos() {
   const appTitle = "To-Do List";
 
   const [searchValue, setSearchValue] = React.useState("");
+
   const searchChanged = (event) => {
     setSearchValue(event.target.value);
   };
+
   const {
     item: ToDos,
     saveItem: setToDos,
+    sincronizeItem : sincronizeToDos,
     loading,
     error,
   } = useLocalStorage("toDoList", []);
+
   const completedToDos = ToDos.filter((todo) => todo.completed);
+
   let filteredToDos = [];
+
   if (!(searchValue.length >= 1)) {
     filteredToDos = ToDos;
   } else {
@@ -55,7 +61,7 @@ function useToDos() {
     toggleModal();
   };
 
-  const updateDocTitle = () => {
+   const updateDocTitle = () => {
     if (!ToDos.length) {
       document.title = `To-Do List`;
     } else {
@@ -78,10 +84,13 @@ function useToDos() {
     setOpenModal(!openModal);
   };
 
+  const [showingModal, setShowingModal] = useState(null);
+
   return {
     appTitle,
     completedToDos,
     ToDos,
+    sincronizeToDos,
     loading,
     error,
     searchValue,
@@ -95,6 +104,8 @@ function useToDos() {
     deleteTodo,
     openModal,
     toggleModal,
+    showingModal,
+    setShowingModal,
   };
 }
 
