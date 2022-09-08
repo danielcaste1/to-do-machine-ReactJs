@@ -1,13 +1,13 @@
 {
-  "files": {
-    "main.css": "/to-do-machine-ReactJs/static/css/main.bb15af1d.css",
-    "main.js": "/to-do-machine-ReactJs/static/js/main.8f37e5be.js",
-    "index.html": "/to-do-machine-ReactJs/index.html",
-    "main.bb15af1d.css.map": "/to-do-machine-ReactJs/static/css/main.bb15af1d.css.map",
-    "main.8f37e5be.js.map": "/to-do-machine-ReactJs/static/js/main.8f37e5be.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.bb15af1d.css",
-    "static/js/main.8f37e5be.js"
-  ]
+  "main.css": "/to-do-machine-ReactJs/static/css/main.b8cc1167.chunk.css",
+  "main.js": "/to-do-machine-ReactJs/static/js/main.05f65d3b.chunk.js",
+  "main.js.map": "/to-do-machine-ReactJs/static/js/main.05f65d3b.chunk.js.map",
+  "static/js/1.babe1933.chunk.js": "/to-do-machine-ReactJs/static/js/1.babe1933.chunk.js",
+  "static/js/1.babe1933.chunk.js.map": "/to-do-machine-ReactJs/static/js/1.babe1933.chunk.js.map",
+  "runtime~main.js": "/to-do-machine-ReactJs/static/js/runtime~main.dbeec19e.js",
+  "runtime~main.js.map": "/to-do-machine-ReactJs/static/js/runtime~main.dbeec19e.js.map",
+  "static/css/main.b8cc1167.chunk.css.map": "/to-do-machine-ReactJs/static/css/main.b8cc1167.chunk.css.map",
+  "index.html": "/to-do-machine-ReactJs/index.html",
+  "precache-manifest.ece6b2682f3b62b371bc7f22a49cb8c8.js": "/to-do-machine-ReactJs/precache-manifest.ece6b2682f3b62b371bc7f22a49cb8c8.js",
+  "service-worker.js": "/to-do-machine-ReactJs/service-worker.js"
 }
