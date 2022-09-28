@@ -1,4 +1,3 @@
-import React from "react";
 import { withStorageListener } from "./withStorageListener";
 
 function ChangeAlert({ show, toggleShow }) {

@@ -8,7 +8,7 @@ function ToDoSearch({ loading, searchValue, searchChanged }) {
         type="text"
         placeholder="Search..."
         value={searchValue}
-        onChange={searchChanged}
+        onChange={event =>searchChanged(event.target.value)}
         disabled = {loading}
       />
     </div>

@@ -2,10 +2,10 @@ import React, {} from "react";
 import "./ToDoTitle.css"
 
 
-function ToDoTitle ({appTitle}){
+function ToDoTitle (){
     return(
         <h1 className="app-title">
-            {appTitle}
+            To Do Machine
         </h1>
     )
 }

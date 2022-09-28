@@ -28,6 +28,7 @@ function AddContactCard({newTodo, setNewTodo, addNewTodo, toggleModal}) {
           type="button"
           onClick={() => {
             addNewTodo(newTodo);
+            toggleModal();
           }}
         >
           Add
